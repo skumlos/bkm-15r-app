@@ -7,21 +7,23 @@
 
 #define MONITOR_PORT (53484)
 #define MONITOR_DEFAULT_IP "192.168.0.1"
-// status word 1
+
+// status word 0
 #define POWER_ON_STATUS     (0x8000)
 #define SCANMODE_STATUS     (0x0400)
 #define HDELAY_STATUS       (0x0200)
 #define VDELAY_STATUS       (0x0100)
 #define MONOCHROME_STATUS   (0x0080)
 #define CHAR_MUTE_STATUS    (0x0040)
+#define MARKER_MODE_STATUS  (0x0020)
+#define EXTSYNC_STATUS      (0x0010)
 #define APT_STATUS          (0x0008)
 #define CHROMA_UP_STATUS    (0x0004)
 #define ASPECT_STATUS       (0x0002)
-//#define EXTSYNC_STATUS      (0x0002) // FIXME
-//#define MARKER_MODE_STATUS  (0x0002) // FIXME
-// status word 2
 
-// status word 3
+// status word 1
+
+// status word 2
 #define COL_TEMP_STATUS     (0x0040)
 #define COMB_STATUS         (0x0020)
 #define BLUE_ONLY_STATUS    (0x0010)
@@ -29,7 +31,7 @@
 #define G_CUTOFF_STATUS     (0x0002)
 #define B_CUTOFF_STATUS     (0x0001)
 
-// status word 4
+// status word 3
 #define MAN_PHASE_STATUS    (0x0080)
 #define MAN_CHROMA_STATUS   (0x0040)
 #define MAN_BRIGHT_STATUS   (0x0020)
