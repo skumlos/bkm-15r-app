@@ -50,7 +50,7 @@
 
 // Status buttons
 #define POWER_BUTTON        "POWER"
-#define DEGAUSS_BUTTTON     "DEGAUSS"
+#define DEGAUSS_BUTTON      "DEGAUSS"
 
 #define SCANMODE_BUTTON     "SCANMODE"
 #define HDELAY_BUTTON       "HDELAY"
@@ -365,15 +365,15 @@ int main(int argc , char *argv[])
                     break;
                     case 'D':
                         dataLength = sizeof(header)-1;
-                        packetBuf[dataLength++] = strlen(STATUS_SET) + strlen(DEGAUSS_BUTTTON) + strlen(TOGGLE) + 2;
+                        packetBuf[dataLength++] = strlen(STATUS_SET) + strlen(DEGAUSS_BUTTON) + strlen(TOGGLE) + 2;
                         memcpy(packetBuf+dataLength, STATUS_SET, strlen(STATUS_SET));
                         dataLength += strlen(STATUS_SET);
                         packetBuf[dataLength++] = 0x20;
-                        memcpy(packetBuf+dataLength, DEGAUSS_BUTTTON, strlen(DEGAUSS_BUTTTON));
-                        dataLength += strlen(DEGAUSS_BUTTTON);
+                        memcpy(packetBuf+dataLength, DEGAUSS_BUTTON, strlen(DEGAUSS_BUTTON));
+                        dataLength += strlen(DEGAUSS_BUTTON);
                         packetBuf[dataLength++] = 0x20;
                         if(send(sockfd, packetBuf, dataLength, 0) < 0) {
-                            fprintf(stderr,"Failed sending %s\n",DEGAUSS_BUTTTON);
+                            fprintf(stderr,"Failed sending %s\n",DEGAUSS_BUTTON);
                             goto fail;
                         }
                         recv(sockfd, button_response,sizeof(button_response),0);
